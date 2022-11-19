@@ -20,7 +20,7 @@ const PageNavbar = () => {
     setAccountMenu(e.currentTarget);
   };
   return (
-    <AppBar>
+    <AppBar position='static'>
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="re search news">
           <SearchIcon fontSize="large" />
