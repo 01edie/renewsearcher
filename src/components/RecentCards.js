@@ -25,6 +25,7 @@ const RecentCards = () => {
           return (
             <Card
               sx={{
+                transition: 'all 0.2s',
                 "&:hover": {
                   boxShadow: 16,
                   marginTop: "7.5px",

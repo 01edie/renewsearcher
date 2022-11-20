@@ -15,6 +15,9 @@ import { styled } from "@mui/material/styles";
 import { tooltipClasses } from "@mui/material/Tooltip";
 import RecentCards from "./RecentCards";
 import LandingFeatures from "./LandingFeatures";
+import DrawerList from "./DrawerList";
+
+
 
 const Main = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -72,12 +75,8 @@ const Main = () => {
         open={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
       >
-        <Box  width={{xs:'100px',sm:'250px', md:'350px'}} textAlign="center" role="presentation">
-          <Typography variant="h6" component="div" mt='10px'>
-            Panel
-          </Typography>
-          <Divider sx={{margin:'10px 2px'}}/>
-        </Box>
+        
+        <DrawerList/>
       </Drawer>
       {/* .......... */}
 
