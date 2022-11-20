@@ -16,12 +16,12 @@ import { tooltipClasses } from "@mui/material/Tooltip";
 import RecentCards from "./RecentCards";
 import LandingFeatures from "./LandingFeatures";
 import DrawerList from "./DrawerList";
+import Lab from "./Lab";
 
 
 
-const Main = () => {
+const Main = ({isLabOpen, setIsLabOpen}) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   // styled tooltip
   const HtmlTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
@@ -76,16 +76,22 @@ const Main = () => {
         onClose={() => setIsDrawerOpen(false)}
       >
         
-        <DrawerList/>
+        <DrawerList labFunc={setIsLabOpen}/>
       </Drawer>
       {/* .......... */}
 
+
       {/* main container */}
       <Grid container>
-        {/* features grid */}
+          {isLabOpen?(<Lab/>):
+          <>
+          {/* features grid */}
         <LandingFeatures />
         {/* landing page recent news cards  container */}
         <RecentCards />
+          </>
+          }
+        
       </Grid>
     </>
   );

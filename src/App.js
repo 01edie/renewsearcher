@@ -1,14 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Main from './components/Main'
 import PageNavbar from './components/PageNavbar'
 
 
 
 const App = () => {
+  const [isLabOpen, setIsLabOpen] = useState(false);
+
   return (
     <>
-    <PageNavbar/>
-    <Main/>
+    <PageNavbar  labFunc={setIsLabOpen} />
+    <Main isLabOpen={isLabOpen} setIsLabOpen={setIsLabOpen} />
     </>
   )
 }

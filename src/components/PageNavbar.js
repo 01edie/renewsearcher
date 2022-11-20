@@ -14,7 +14,7 @@ import BadgeIcon from "@mui/icons-material/Badge";
 import Person3Icon from '@mui/icons-material/Person3';
 import FolderSharedIcon from '@mui/icons-material/FolderShared';
 
-const PageNavbar = () => {
+const PageNavbar = ({labFunc}) => {
   const [accountMenu, setAccountMenu] = useState(null);
   const handleClick = (e) => {
     setAccountMenu(e.currentTarget);
@@ -22,7 +22,7 @@ const PageNavbar = () => {
   return (
     <AppBar position='static'>
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="re search news">
+        <IconButton edge="start" color="inherit" aria-label="re search news" onClick={()=>labFunc(false)}>
           <SearchIcon fontSize="large" />
         </IconButton>
         <Typography variant="h5" component="div" flexGrow={1}>
