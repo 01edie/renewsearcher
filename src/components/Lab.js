@@ -49,10 +49,12 @@ const Lab = () => {
       <form onSubmit={handleSubmit(handleSearch)}>
         <Stack
           ml={6}
-          spacing={2}
+          spacing={{xs:3,sm:2}}
           id="functionalities-container"
-          direction="row"
+          direction={{xs:'column',sm:'row'}}
         >
+          
+          <Stack direction='row' spacing={2}>
           <Controller
             name="query"
             control={control}
@@ -67,7 +69,7 @@ const Lab = () => {
             )}
           />
 
-          <Box id="filter" width="250px">
+          <Box id="filterValue" width={{xs:'150px',sm:'125px',md:'250px'}}>
             <Controller
               name="filterValue"
               control={control}
@@ -86,7 +88,10 @@ const Lab = () => {
               )}
             ></Controller>
           </Box>
-          <Box id="filter" width="250px">
+          </Stack>
+          
+          <Stack direction='row' spacing={2}>
+          <Box id="timeValue" width={{xs:'150px',sm:'125px',md:'250px'}}>
             <Controller
               name="timeValue"
               control={control}
@@ -122,6 +127,8 @@ const Lab = () => {
           >
             <SearchIcon color="inherit" sx={{ fontSize: "36px" }} />
           </IconButton>
+          </Stack>
+          
         </Stack>
       </form>
 
