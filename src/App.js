@@ -5,7 +5,7 @@ import PageNavbar from './components/PageNavbar'
 
 
 const App = () => {
-  const [isLabOpen, setIsLabOpen] = useState(false);
+  const [isLabOpen, setIsLabOpen] = useState(true);
 
   return (
     <>
