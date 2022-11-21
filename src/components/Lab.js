@@ -16,7 +16,6 @@ import {
 } from "@mui/material";
 import { Masonry } from "@mui/lab";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import axios from 'axios'
 import React from "react";
 import SearchIcon from "@mui/icons-material/YoutubeSearchedFor";
 import { Controller, useForm } from "react-hook-form";
