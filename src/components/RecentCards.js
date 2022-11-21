@@ -78,72 +78,72 @@ const RecentCards = () => {
   );
 };
 
-const exampleData = [
-  {
-    source: {
-      id: "techcrunch",
-      name: "TechCrunch",
-    },
-    author: "Connie Loizos",
-    title: "Drive Capital's investors hit a fork in the road",
-    description:
-      "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late",
-    url: "https://techcrunch.com/2022/11/18/drive-capitals-investors-hit-a-fork-in-the-road/",
-    urlToImage:
-      "https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-157429059.jpg?resize=250,150",
-    publishedAt: "2022-11-19T05:32:54Z",
-    content:
-      "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late, and according to ou… [+6808 chars]",
-  },
-  {
-    source: {
-      id: "techcrunch",
-      name: "TechCrunch",
-    },
-    author: "Connie Loizos",
-    title: "Drive Capital's investors hit a fork in the road",
-    description:
-      "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late",
-    url: "https://techcrunch.com/2022/11/18/drive-capitals-investors-hit-a-fork-in-the-road/",
-    urlToImage:
-      "https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-157429059.jpg?resize=250,150",
-    publishedAt: "2022-11-19T05:32:54Z",
-    content:
-      "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late, and according to ou… [+6808 chars]",
-  },
-  {
-    source: {
-      id: "techcrunch",
-      name: "TechCrunch",
-    },
-    author: "Connie Loizos",
-    title: "Drive Capital's investors hit a fork in the road",
-    description:
-      "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late",
-    url: "https://techcrunch.com/2022/11/18/drive-capitals-investors-hit-a-fork-in-the-road/",
-    urlToImage:
-      "https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-157429059.jpg?resize=250,150",
-    publishedAt: "2022-11-19T05:32:54Z",
-    content:
-      "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late, and according to ou… [+6808 chars]",
-  },
-  {
-    source: {
-      id: "techcrunch",
-      name: "TechCrunch",
-    },
-    author: "Connie Loizos",
-    title: "Drive Capital's investors hit a fork in the road",
-    description:
-      "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late",
-    url: "https://techcrunch.com/2022/11/18/drive-capitals-investors-hit-a-fork-in-the-road/",
-    urlToImage:
-      "https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-157429059.jpg?resize=250,150",
-    publishedAt: "2022-11-19T05:32:54Z",
-    content:
-      "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late, and according to ou… [+6808 chars]",
-  },
-];
+// const exampleData = [
+//   {
+//     source: {
+//       id: "techcrunch",
+//       name: "TechCrunch",
+//     },
+//     author: "Connie Loizos",
+//     title: "Drive Capital's investors hit a fork in the road",
+//     description:
+//       "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late",
+//     url: "https://techcrunch.com/2022/11/18/drive-capitals-investors-hit-a-fork-in-the-road/",
+//     urlToImage:
+//       "https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-157429059.jpg?resize=250,150",
+//     publishedAt: "2022-11-19T05:32:54Z",
+//     content:
+//       "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late, and according to ou… [+6808 chars]",
+//   },
+//   {
+//     source: {
+//       id: "techcrunch",
+//       name: "TechCrunch",
+//     },
+//     author: "Connie Loizos",
+//     title: "Drive Capital's investors hit a fork in the road",
+//     description:
+//       "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late",
+//     url: "https://techcrunch.com/2022/11/18/drive-capitals-investors-hit-a-fork-in-the-road/",
+//     urlToImage:
+//       "https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-157429059.jpg?resize=250,150",
+//     publishedAt: "2022-11-19T05:32:54Z",
+//     content:
+//       "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late, and according to ou… [+6808 chars]",
+//   },
+//   {
+//     source: {
+//       id: "techcrunch",
+//       name: "TechCrunch",
+//     },
+//     author: "Connie Loizos",
+//     title: "Drive Capital's investors hit a fork in the road",
+//     description:
+//       "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late",
+//     url: "https://techcrunch.com/2022/11/18/drive-capitals-investors-hit-a-fork-in-the-road/",
+//     urlToImage:
+//       "https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-157429059.jpg?resize=250,150",
+//     publishedAt: "2022-11-19T05:32:54Z",
+//     content:
+//       "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late, and according to ou… [+6808 chars]",
+//   },
+//   {
+//     source: {
+//       id: "techcrunch",
+//       name: "TechCrunch",
+//     },
+//     author: "Connie Loizos",
+//     title: "Drive Capital's investors hit a fork in the road",
+//     description:
+//       "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late",
+//     url: "https://techcrunch.com/2022/11/18/drive-capitals-investors-hit-a-fork-in-the-road/",
+//     urlToImage:
+//       "https://techcrunch.com/wp-content/uploads/2016/11/gettyimages-157429059.jpg?resize=250,150",
+//     publishedAt: "2022-11-19T05:32:54Z",
+//     content:
+//       "Drive Capital was founded by two former Sequoia Capital Partners looking to start anew in the Midwest. But investors in the Columbus, Oh.-based firm have had a bumpy ride of late, and according to ou… [+6808 chars]",
+//   },
+// ];
 const currentData = [
   {
     source: {
