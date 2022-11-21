@@ -25,7 +25,7 @@ const PageNavbar = ({labFunc}) => {
         <IconButton edge="start" color="inherit" aria-label="re search news" onClick={()=>labFunc(false)}>
           <SearchIcon fontSize="large" />
         </IconButton>
-        <Typography variant="h5" component="div" flexGrow={1}>
+        <Typography variant="h5" component="div" sx={{'&:hover':{cursor:'pointer'}}} flexGrow={1} onClick={()=>labFunc(false)}>
           Renewsearcher
         </Typography>
         <Stack direction="row" spacing="2">

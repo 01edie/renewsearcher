@@ -6,9 +6,9 @@ import {
   IconButton,
   Tooltip,
   Zoom,
-  Divider
+  
 } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Menu } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
@@ -76,7 +76,7 @@ const Main = ({isLabOpen, setIsLabOpen}) => {
         onClose={() => setIsDrawerOpen(false)}
       >
         
-        <DrawerList labFunc={setIsLabOpen}/>
+        <DrawerList labFunc={setIsLabOpen} drawerFunc={setIsDrawerOpen}/>
       </Drawer>
       {/* .......... */}
 
