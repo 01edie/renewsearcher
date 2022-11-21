@@ -24,7 +24,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 const DrawerList = ({labFunc, drawerFunc}) => {
     const iconButtonStyles={ fontSize:'24px',transition:'all 0.25s','&:hover':{fontSize:'36px'}}
   return (
-    <Stack justifyContent='space-between' sx={{paddingBottom:'24px'}} width={{xs:'100px',sm:'250px', md:'350px'}} height='100%'>
+    <Stack justifyContent='space-between' sx={{paddingBottom:'24px'}} width={{xs:'225px',sm:'250px', md:'350px'}} height='100%'>
         
         <List disablePadding>
             {/* Panel Heading */}
