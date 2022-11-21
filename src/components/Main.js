@@ -6,22 +6,25 @@ import {
   IconButton,
   Tooltip,
   Zoom,
-  
 } from "@mui/material";
 import React, { useState } from "react";
 
 import { Menu } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import { tooltipClasses } from "@mui/material/Tooltip";
-import RecentCards from "./RecentCards";
-import LandingFeatures from "./LandingFeatures";
 import DrawerList from "./DrawerList";
-import Lab from "./Lab";
+import PageManager from "./PageManager";
 
-
-
-const Main = ({isLabOpen, setIsLabOpen}) => {
+const Main = ({
+  isLabOpen,
+  setIsLabOpen,
+  isRegistrationOpen,
+  setIsRegistrationOpen,
+  isFeaturesOpen,
+  setIsFeaturesOpen,
+}) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   // styled tooltip
   const HtmlTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
@@ -75,23 +78,22 @@ const Main = ({isLabOpen, setIsLabOpen}) => {
         open={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
       >
-        
-        <DrawerList labFunc={setIsLabOpen} drawerFunc={setIsDrawerOpen}/>
+        <DrawerList
+          labFunc={setIsLabOpen}
+          drawerFunc={setIsDrawerOpen}
+          setIsRegistrationOpen={setIsRegistrationOpen}
+          setIsFeaturesOpen={setIsFeaturesOpen}
+        />
       </Drawer>
       {/* .......... */}
 
-
       {/* main container */}
       <Grid container>
-          {isLabOpen?(<Lab/>):
-          <>
-          {/* features grid */}
-        <LandingFeatures />
-        {/* landing page recent news cards  container */}
-        <RecentCards />
-          </>
-          }
-        
+        <PageManager
+          isLabOpen={isLabOpen}
+          isRegistrationOpen={isRegistrationOpen}
+          isFeaturesOpen={isFeaturesOpen}
+        />
       </Grid>
     </>
   );

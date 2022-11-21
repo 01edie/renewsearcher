@@ -13,8 +13,10 @@ import SearchIcon from "@mui/icons-material/TravelExplore";
 import BadgeIcon from "@mui/icons-material/Badge";
 import Person3Icon from '@mui/icons-material/Person3';
 import FolderSharedIcon from '@mui/icons-material/FolderShared';
+import { grey } from "@mui/material/colors";
 
-const PageNavbar = ({labFunc}) => {
+
+const PageNavbar = ({labFunc,setIsRegistrationOpen,setIsFeaturesOpen}) => {
   const [accountMenu, setAccountMenu] = useState(null);
   const handleClick = (e) => {
     setAccountMenu(e.currentTarget);
@@ -22,10 +24,10 @@ const PageNavbar = ({labFunc}) => {
   return (
     <AppBar position='static'>
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="re search news" onClick={()=>labFunc(false)}>
+        <IconButton edge="start" color="inherit" aria-label="re search news" onClick={()=>{labFunc(false);setIsRegistrationOpen(false);setIsFeaturesOpen(false);}}>
           <SearchIcon fontSize="large" />
         </IconButton>
-        <Typography variant="h5" component="div" sx={{'&:hover':{cursor:'pointer'}}} flexGrow={1} onClick={()=>labFunc(false)}>
+        <Typography variant="h5" component="div" sx={{'&:hover':{cursor:'pointer'}}} flexGrow={1} onClick={()=>{labFunc(false);setIsRegistrationOpen(false);setIsFeaturesOpen(false);}}>
           Renewsearcher
         </Typography>
         <Stack direction="row" spacing="2">
@@ -44,12 +46,12 @@ const PageNavbar = ({labFunc}) => {
           anchorOrigin={{vertical:'bottom',horizontal:'left'}}
           transformOrigin={{vertical:'top',horizontal:'left'}}
          PaperProps={{sx : {
-          bgcolor:'grey.400'
+          bgcolor:grey[400]
          }}
         }
         >
           <MenuItem sx={{gap:'0.75rem',fontWeight:'600'}}><Person3Icon ></Person3Icon>Log In</MenuItem>
-          <MenuItem sx={{gap:'0.75rem',fontWeight:'600'}}><FolderSharedIcon></FolderSharedIcon>Register</MenuItem>
+          <MenuItem sx={{gap:'0.75rem',fontWeight:'600'}} onClick={()=>{setIsRegistrationOpen(true);labFunc(false);setIsFeaturesOpen(false);}}><FolderSharedIcon></FolderSharedIcon>Register</MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
