@@ -3,8 +3,8 @@ import Main from "./components/Main";
 import PageNavbar from "./components/PageNavbar";
 
 const App = () => {
-  const [isLabOpen, setIsLabOpen] = useState(true);
-  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+  const [isLabOpen, setIsLabOpen] = useState(false);
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(true);
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
 
   return (
