@@ -176,6 +176,7 @@ const Main = ({
             minWidth={{ xs: "200px", sm: "400px" }}
             p={{ xs: "16px", sm: "32px" }}
             onSubmit={handleSubmit(logInHandler)}
+            action='post'
           >
             <TextField
               error={authFail}
