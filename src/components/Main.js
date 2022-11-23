@@ -222,7 +222,7 @@ const Main = ({
       >
         <SnackbarAlert onClose={handleCloseToast} severity="success">
           {" "}
-          Registered Successfully
+          Signed In Successfully
         </SnackbarAlert>
       </Snackbar>
     </LocalizationProvider>
