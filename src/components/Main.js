@@ -14,6 +14,8 @@ import { styled } from "@mui/material/styles";
 import { tooltipClasses } from "@mui/material/Tooltip";
 import DrawerList from "./DrawerList";
 import PageManager from "./PageManager";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 const Main = ({
   isLabOpen,
@@ -39,7 +41,7 @@ const Main = ({
   }));
   // ................
   return (
-    <>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
       {/* drawer button */}
       <Box sx={{ position: "absolute" }}>
         <HtmlTooltip
@@ -95,7 +97,7 @@ const Main = ({
           isFeaturesOpen={isFeaturesOpen}
         />
       </Grid>
-    </>
+    </LocalizationProvider>
   );
 };
 
