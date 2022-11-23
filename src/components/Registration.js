@@ -12,7 +12,6 @@ import {
   Checkbox,
   Snackbar,
   Alert,
-  AlertProps,
 } from "@mui/material";
 import React, { useState,forwardRef  } from "react";
 import { Controller, useForm } from "react-hook-form";

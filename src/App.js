@@ -4,8 +4,11 @@ import PageNavbar from "./components/PageNavbar";
 
 const App = () => {
   const [isLabOpen, setIsLabOpen] = useState(false);
-  const [isRegistrationOpen, setIsRegistrationOpen] = useState(true);
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
+
+  const [signedIn, setSignedIn] = useState({status:true,data:''});
+  const [signInDialog, setSignDialog] =useState(false);
 
   return (
     <>
@@ -13,6 +16,12 @@ const App = () => {
         labFunc={setIsLabOpen}
         setIsRegistrationOpen={setIsRegistrationOpen}
         setIsFeaturesOpen={setIsFeaturesOpen}
+
+        setSignDialog={setSignDialog}
+
+        signedIn={signedIn}
+        setSignedIn={setSignedIn}
+        
       />
       <Main
         isLabOpen={isLabOpen}
@@ -21,6 +30,12 @@ const App = () => {
         isRegistrationOpen={isRegistrationOpen}
         isFeaturesOpen={isFeaturesOpen}
         setIsFeaturesOpen={setIsFeaturesOpen}
+
+        signInDialog={signInDialog}
+        setSignDialog={setSignDialog}
+
+        setSignedIn={setSignedIn}
+        signedIn={signedIn}
       />
     </>
   );
