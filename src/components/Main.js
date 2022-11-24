@@ -15,9 +15,9 @@ import {
   TextField,
   FormHelperText,
   Snackbar,
-  Alert
+  Alert,
 } from "@mui/material";
-import React, { useState, forwardRef  } from "react";
+import React, { useState, forwardRef } from "react";
 
 import { Menu } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
@@ -27,12 +27,12 @@ import PageManager from "./PageManager";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useForm } from "react-hook-form";
-
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 const SnackbarAlert = forwardRef(function SnackbarAlert(props, ref) {
   return <Alert elevation={6} ref={ref} {...props}></Alert>;
 });
-
 
 const Main = ({
   isLabOpen,
@@ -62,14 +62,27 @@ const Main = ({
     },
   }));
   //sign in form hooks and handler
-  const { register, handleSubmit } = useForm();
+  // schema
+  const schema = yup.object().shape({
+    email: yup.string().required().email('Invalid Email'),
+    password: yup.string().required(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
   const [authFail, setAuthFail] = useState(false);
+
   const testUserDetails = [
     {
+      firstName: "Biswajit",
       email: "01bbose@gmail.com",
       password: "pass",
     },
     {
+      firstName: "User",
       email: "a@a.c",
       password: "aaaa",
     },
@@ -81,19 +94,19 @@ const Main = ({
       setAuthFail(false);
       console.log("authentication successful");
       setSignedIn((val) => {
-        return { ...val, status: true, data: data.email };
+        return { ...val, status: true, data: tmpUser };
       });
       setIsLabOpen(false);
       setIsRegistrationOpen(false);
       setIsFeaturesOpen(false);
-      
+
       setSignDialog(false);
       setOpenToast(true);
     } else {
       setAuthFail(true);
     }
   };
-//signed in toast and handler
+  //signed in toast and handler
   const handleCloseToast = (e, reason) => {
     if (reason === "clickaway") {
       return;
@@ -176,23 +189,25 @@ const Main = ({
             minWidth={{ xs: "200px", sm: "400px" }}
             p={{ xs: "16px", sm: "32px" }}
             onSubmit={handleSubmit(logInHandler)}
-            action='post'
+            action="post"
           >
             <TextField
-              error={authFail}
+              error={authFail || Boolean(errors.email)}
               label="Email"
               type="email"
               {...register("email")}
-              placeholder='testId: a@a.c'
+              placeholder="testId: a@a.c"
               variant="standard"
+              helperText={Boolean(errors.email)?errors.email.message:null}
             ></TextField>
             <TextField
-              error={authFail}
+              error={authFail || Boolean(errors.password)}
               label="Password"
               {...register("password")}
               type="password"
               variant="standard"
-              placeholder='testPwd: aaaa'
+              placeholder="testPwd: aaaa"
+              helperText={Boolean(errors.password)?errors.password.message:null}
             ></TextField>
             <Button variant="contained" type="submit">
               Log In

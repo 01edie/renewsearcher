@@ -58,12 +58,15 @@ const PageNavbar = ({
           Renewsearcher
         </Typography>
         <Stack direction="row" spacing="2">
+          {/* while signed in */}
           {signedIn.status ? (
             <Button color="inherit" id="accounts-btn" onClick={handleClick}>
-              <Avatar>{signedIn.data.slice(0, 1)}</Avatar>
-              
+              <Avatar sx={{bgcolor:'success.light'}}>{signedIn.data.firstName.slice(0, 1)}</Avatar>
+              <Typography variant="h6" component='h6' ml={2}>{signedIn.data.firstName}</Typography>
             </Button>
-          ) : (
+          ) : 
+          // while not signed in
+          (   
             <Button color="inherit" id="accounts-btn" onClick={handleClick}>
               <BadgeIcon
                 sx={{ marginRight: "10px", fontSize: "30px" }}

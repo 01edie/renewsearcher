@@ -7,7 +7,7 @@ const App = () => {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
 
-  const [signedIn, setSignedIn] = useState({status:false,data:''});
+  const [signedIn, setSignedIn] = useState({status:false,data:{}});
   const [signInDialog, setSignDialog] =useState(false);
 
   return (
