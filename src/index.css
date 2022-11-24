@@ -5,6 +5,33 @@ margin:0;
   background-color: rgb(197, 229, 255);
 }
 
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 7.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(32, 109, 185); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #83868a; 
+}
+
+/* ... */
+
+
 @media screen and (max-width:500px){
   html{
     font-size:12px;

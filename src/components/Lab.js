@@ -16,18 +16,21 @@ import {
 } from "@mui/material";
 import { Masonry } from "@mui/lab";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import React from "react";
+import React,{useState} from "react";
 import SearchIcon from "@mui/icons-material/YoutubeSearchedFor";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import currentData from '../data/Data'
 import { red, pink, purple, blue, cyan, teal, orange,amber, brown, blueGrey, deepOrange } from '@mui/material/colors';
-
+import Pagination from '@mui/material/Pagination';
+import moment from 'moment';
 
 const Lab = () => {
-
+  const now = moment();
+  console.log(now.subtract(3, 'months').calendar());
   const colorArr = [red, pink, purple, blue, cyan, teal, orange, amber, brown, blueGrey, deepOrange];
+  const [page, setPage] = useState(1)
   const schema = yup.object().shape({
     query: yup.string().required("You can't search blank!"),
   });
@@ -57,6 +60,7 @@ const Lab = () => {
     const tmpArr= ['men','women'];
     return `https://randomuser.me/api/portraits/${tmpArr[Math.floor(Math.random()*2)]}/${Math.floor(Math.random()*100)}.jpg`
   }
+
 
 
   return (
@@ -99,8 +103,7 @@ const Lab = () => {
                     {...field}
                   >
                     <MenuItem value="everything">Everything</MenuItem>
-                    <MenuItem value="top-headlines">Top Headlines</MenuItem>
-                    <MenuItem value="sources">By Source</MenuItem>
+                    <MenuItem value="filtered">Filtered</MenuItem>
                   </TextField>
                 )}
               ></Controller>
@@ -156,7 +159,9 @@ const Lab = () => {
           columns={{ xs: 2, sm: 3, md: 4, xl: 5 }}
           spacing={{ xs: 1, sm: 2, md: 1 }}
         >
-          {currentData.slice(0, 12).map((data, index) => {
+          {
+
+          currentData.slice((page-1)*12,currentData[(12*page)]?(12*page):(currentData.length)).map((data, index) => {
             const imageUrl = `${data.urlToImage.split("?")[0]}?resize=250,150`;
             return (
               <Card
@@ -208,7 +213,7 @@ const Lab = () => {
                     {data.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {data.description.slice(0, 120)}...
+                    {data.content.slice(0, 120)}...
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ paddingLeft: "10px", paddingBottom: "5px" }}>
@@ -230,6 +235,9 @@ const Lab = () => {
           })}
         </Masonry>
       </Grid>
+      <Stack alignItems='center' my={2}>
+        <Pagination count={Math.ceil(currentData.length/12)} onChange={(e,v)=>setPage(v)} page={page} color='primary' size='large' ></Pagination>
+      </Stack>
     </Stack>
   );
 };

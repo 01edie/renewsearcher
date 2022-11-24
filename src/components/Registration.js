@@ -72,7 +72,7 @@ const Registration = () => {
     confirmPassword: yup
       .string()
       .oneOf([yup.ref("password"), null], "Passwords don't match")
-      .required(),
+      .required('You have to confirm your password'),
     agree: yup.bool().isTrue("You must accept to proceed!"),
   });
   //default values
